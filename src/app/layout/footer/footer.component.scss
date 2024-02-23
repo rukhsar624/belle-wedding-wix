@@ -1,0 +1,25 @@
+.middle{
+    width: 80%;
+    margin: auto;
+    // background-color: aqua;
+    height: 100px;
+    p{
+        color: #000;
+        font-size: 1rem;
+        font-family: 'Didot';
+    }
+    button{
+       border:1px solid #dea27a;
+       background-color: transparent;
+        padding: 10px;
+        outline: none;
+        padding: 0.6rem 1.5rem;
+        color: #000;
+        font-family: 'Didot';
+        margin-top: 0.5rem;
+        transition: 0.3s;
+    }
+    button:hover{
+        background-color: #dea27a;
+    }
+}

@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'LovelineGlamour';
+    src: url("./assets/fonts/LovelineGlamour-owdE0.ttf");
+}
+@font-face {
+    font-family: 'Poppins-Light';
+    src: url("./assets/fonts/Poppins-Light.ttf");
+}
+@font-face {
+    font-family: 'Calligrapher';
+    src: url("./assets/fonts/Calligrapher-JRxaE.ttf");
+}
+@font-face {
+    font-family: 'Didot';
+    src: url("./assets/fonts/Didot\ eText\ W01\ Italic.ttf");
+}
+::placeholder {
+    color: #fff;
+    opacity: 1; /* Firefox */
+  }

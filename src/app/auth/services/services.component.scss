@@ -1,0 +1,65 @@
+.main {
+    height: 600px;
+    // background-color: antiquewhite;
+}
+
+.color-div {
+    width: 100%;
+    background-color: #f7efe9;
+    height: 450px;
+    margin-top: 3rem;
+    position: relative;
+
+    .inner-color-div {
+        position: absolute;
+        content: "";
+        width: 70%;
+        margin: auto;
+        height: 450px;
+        top: 100px;
+        left: 200px;
+        background-color: aqua;
+        background-image: url('../../../assets/images/services.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    h1 {
+        color: #fff;
+        font-family: 'LovelineGlamour';
+        text-align: center;
+        margin-top: 6rem;
+    }
+
+}
+
+.inner-div-two {
+    width: 70%;
+    margin: auto;
+
+    button {
+        background-color: #dea27a;
+        padding: 10px;
+        border: none;
+        outline: none;
+        padding: 0.6rem 2.5rem;
+        color: rgba(0, 0, 0, 0.4784313725);
+        font-family: "Poppins-Light";
+    }
+
+    h6 {
+        font-family: "Poppins-Light";
+        font-size: 17px;
+    }
+
+    span {
+        font-family: "Poppins-Light";
+        font-size: 17px;
+
+        h6 {
+            font-family: "Poppins-Light";
+            font-size: 17px;
+        }
+    }
+}

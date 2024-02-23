@@ -1,0 +1,35 @@
+.main {
+    height: 600px;
+    // background-color: antiquewhite;
+}
+
+.color-div {
+    width: 100%;
+    background-color: #f7efe9;
+    height: 450px;
+    margin-top: 3rem;
+    position: relative;
+
+    .inner-color-div {
+        position: absolute;
+        content: "";
+        width: 70%;
+        margin: auto;
+        height: 450px;
+        top: 100px;
+        left: 200px;
+        background-color: aqua;
+        background-image: url('../../../assets/images/gallery.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    h1 {
+        color: #fff;
+        font-family: 'LovelineGlamour';
+        text-align: center;
+        margin-top: 6rem;
+    }
+
+}

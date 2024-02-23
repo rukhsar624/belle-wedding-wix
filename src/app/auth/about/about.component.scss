@@ -1,0 +1,158 @@
+.services {
+    width: 100%;
+    height: 600px;
+    margin-left: 7rem;
+    margin-top: 5rem;
+    h1 {
+        font-family: 'LovelineGlamour';
+        font-size: 6rem;
+    }
+
+    .h1 {
+        position: relative;
+    }
+
+    .sub {
+        position: absolute;
+    content: "";
+    top: 58px;
+    left: 84px;
+    width: 213px;
+    height: 50px;
+    }
+
+    span {
+        font-family: 'LovelineGlamour';
+    }
+
+    p {
+        font-family: 'Poppins-Light';
+    }
+    h5{
+        font-family: 'LovelineGlamour';
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+    .inner-div {
+        background-color: #f7efe9;
+        position: relative;
+        content: "";
+        width: 70%;
+        height: 370px;
+        left: 129px;
+        top: 0px;
+    }
+
+    .img-div {
+        background-color: #000;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 360px;
+        left: -100px;
+        top: 90px;
+    }
+
+    .img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    a {
+        text-decoration: none;
+        position: relative;
+        color: #000;
+        font-family: 'LovelineGlamour';
+        font-size: 20px;
+    }
+
+    .line {
+        position: absolute;
+        content: "";
+        width: 70px;
+        height: 1px;
+        left: 120px;
+        top: 15px;
+        background-color: #dea27a;
+    }
+}
+
+.gallery {
+    height: 560px;
+    .gallery-inner-div {
+        background-color: #f7efe9;
+        position: relative;
+        content: "";
+        width: 65%;
+        height: 370px;
+        right: 0px;
+    }
+    .gallery-img-div{
+        background-color: #000;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 360px;
+        right: -100px;
+        top: 90px;
+    }
+    .gallery-img-div .img{
+        width: 100%;
+        height: 100%;
+    }
+    .gallery-img-div .img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    h1 {
+        font-family: 'LovelineGlamour';
+        font-size: 6rem;
+    }
+
+    .h1 {
+        position: relative;
+    }
+
+    .sub {
+        position: absolute;
+        content: "";
+        top: 58px;
+        left: 58px;
+        width: 220px;
+        height: 50px;
+    }
+
+    span {
+        font-family: 'LovelineGlamour';
+    }
+
+    p {
+        font-family: 'Poppins-Light';
+    }
+    a {
+        text-decoration: none;
+        position: relative;
+        color: #000;
+        font-family: 'LovelineGlamour';
+        font-size: 20px;
+    }
+
+    .line {
+        position: absolute;
+        content: "";
+        width: 70px;
+        height: 1px;
+        left: 120px;
+        top: 15px;
+        background-color: #dea27a;
+    }
+
+}
