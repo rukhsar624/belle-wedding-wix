@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { GetStartedComponent } from './get-started/get-started.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
       {
         path: 'reset',
         component:ResetPasswordComponent,
+      },
+      {
+        path: 'get-started',
+        component:GetStartedComponent,
       }
     ],
   },

@@ -33,3 +33,16 @@
     }
 
 }
+
+@media only screen and (max-width:414px){
+    .inner-color-div {
+        width: 70%;
+        height: 450px;
+        top: 100px;
+        left: 50%; /* Updated left property to center the element */
+        transform: translateX(-50%); /* Center the element horizontally */
+    }
+    .inner-div-two{
+        width: 100%;
+    }
+}

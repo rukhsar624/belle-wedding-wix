@@ -4,7 +4,7 @@
     // background-color: aqua;
     height: 100px;
     p{
-        color: #000;
+        color: var(--color-text);
         font-size: 1rem;
         font-family: 'Didot';
     }
@@ -21,5 +21,19 @@
     }
     button:hover{
         background-color: #dea27a;
+    }
+}
+.footer.showFooterAuth{
+    display:none;
+}
+@media only screen and (max-width:414px){
+    .line-footer{
+        text-align: center;
+    }
+    .footer-height{
+        height: 300px;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
     }
 }

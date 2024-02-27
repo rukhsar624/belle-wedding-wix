@@ -1,8 +1,9 @@
 .services {
     width: 100%;
-    height: 600px;
+    // height: 600px;
     margin-left: 7rem;
     margin-top: 5rem;
+    margin-bottom: 7rem;
 
     h1 {
         font-family: 'LovelineGlamour';
@@ -28,6 +29,7 @@
 
     p {
         font-family: 'Poppins-Light';
+        // font-family: 'LovelineGlamour';
     }
 
     h5 {
@@ -88,7 +90,8 @@
     }
 }
 .gallery {
-    height: 500px;
+    // height: 500px;
+    margin-bottom: 5rem;
     .gallery-inner-div {
         background-color: #f7efe9;
         position: relative;
@@ -106,7 +109,7 @@
         width: 100%;
         height: 360px;
         right: -100px;
-        top: 90px;
+        bottom: 20px;
     }
 
     .gallery-img-div .img {
@@ -203,5 +206,18 @@ form{
     }
     button:hover{
         color :#dea27a;
+    }
+}
+
+@media only screen and (max-width:414px){
+    .services{
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    #h1{
+        margin-top: 6rem;
+    }
+    .gallery .gallery-img-div{
+        height: auto;
     }
 }
