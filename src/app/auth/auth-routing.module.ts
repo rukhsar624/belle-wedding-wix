@@ -20,12 +20,16 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo:'home',
+        redirectTo:'login',
         pathMatch: 'full',
       },
       {
+        path: 'login',
+        component:LoginComponent,
+      },
+      {
         path: 'home',
-        component:HomeComponent ,
+        component:HomeComponent,
       },
       {
         path: 'about',
@@ -46,10 +50,6 @@ const routes: Routes = [
       {
         path: 'contact',
         component:ContactComponent ,
-      },
-      {
-        path: 'login',
-        component:LoginComponent,
       },
       {
         path: 'register',

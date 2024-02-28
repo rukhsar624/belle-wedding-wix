@@ -4,41 +4,41 @@
             <div class="col-lg-12">
                 <div class="center-div">
                     <h1>log In</h1>
-                <form action="" class="text-center">
-                    <div class="mt-3 input"><input type="email" placeholder="Email"></div>
-                    <div class="mt-3 input"><input type="text" placeholder="Password"></div>
-                    <div><p class=""><a href="">Forget Password</a></p></div>
-                    <div class="mt-3 input"><button>login</button></div>
-                    <div><p class="text-center">Don't have an Account ? <a href="">Sign Up</a></p></div>
-                </form>
+                    <form action="" class="text-center d-flex justify-content-center flex-column"
+                        [formGroup]="Loginform" style="width: 50%;margin: auto;">
+                        <div class="mb-4 input"><input class="form-control" type="email" required=""
+                                formControlName="email" placeholder="Email" autocomplete="off">
+                            <div *ngIf="Loginform.controls['email'].touched && Loginform.controls['email'].errors?.['required']"
+                                class="text-dag text-danger mt-1">
+                                Email is required
+                            </div>
+                            <div class="position-relative mx-auto mt-4"><input class="form-control" type="password"
+                                    required="" formControlName="password" placeholder="Password"
+                                    [type]="show ? 'text' : 'password'" autocomplete="off">
+                                <div *ngIf="Loginform.controls['password'].touched && Loginform.controls['password'].errors?.['required']"
+                                    class="text-dag text-danger mt-1">
+                                    Password is required
+                                </div>
+                                <div class="show-eye">
+                                    <div class="show-hide" (click)="showPassword()"><span class="show"><i
+                                                class="fa {{show? 'fa-eye' : 'fa-eye-slash'}}"></i></span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class=""><a routerLink="../forget" ariaCurrentWhenActive="page">Forget Password</a></p>
+                        </div>
+                        <div class="mt-3 input"><button (click)="loginUser()">login</button></div>
+                        <div>
+                            <p class="text-center">Don't have an Account ?
+                                <a routerLink="../register" ariaCurrentWhenActive="page">Sign Up</a>
+                            </p>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- <div class="main-container">
-    <div class="child">1</div>
-    <div class="child">2</div>
-    <div class="child">3</div>
-    <div class="child">4</div>
-    <div class="child">5</div>
-    <div class="child">6</div>
-    <div class="child">7</div>
-    <div class="child">8</div>
-    <div class="child">9</div>
-    <div class="child">10</div>
-    <div class="child">11</div>
-    <div class="child">12</div>
-    <div class="child">13</div>
-    <div class="child">14</div>
-    <div class="child">15</div>
-    <div class="child">16</div>
-    <div class="child">17</div>
-    <div class="child">18</div>
-    <div class="child">19</div>
-    <div class="child">20</div>
-    <div class="child">21</div>
-    <div class="child">22</div>
-    <div class="child">23</div>
-    <div class="child">24</div>
-  </div> -->

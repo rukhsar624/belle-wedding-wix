@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component, ElementRef, Renderer2 } from '@angular/core';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent {
-  constructor(private el: ElementRef, private renderer: Renderer2){
+  constructor(private el: ElementRef, private renderer: Renderer2,http:HttpClient){
   }
   ngAfterViewInit() {
     const header = this.el.nativeElement.querySelector('.main-div app-header');

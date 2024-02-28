@@ -1,13 +1,16 @@
-.header{
+.header {
     height: 60px;
-    .logo-div-main{
+
+    .logo-div-main {
         width: 40%;
         margin-left: 2rem;
     }
-    .link-div{
+
+    .link-div {
         width: 60%;
     }
-    .link a{
+
+    .link a {
         text-decoration: none;
         padding: 5px;
         margin: 9px;
@@ -16,25 +19,30 @@
         font-family: 'Poppins-Light';
         font-size: 13px;
     }
-    .logo-div{
+
+    .logo-div {
         width: 50px;
         height: 50px;
     }
-    .logo-div-inner{
+
+    .logo-div-inner {
         width: 100%;
         height: 100%;
     }
-    .logo-div-inner img{
+
+    .logo-div-inner img {
         width: 100%;
         height: 100%;
         object-fit: fill;
     }
-    h5{
+
+    h5 {
         font-family: 'LovelineGlamour';
         font-size: 30px;
         margin-bottom: 0px;
     }
-    .user-div{
+
+    .user-div {
         width: 25px;
         background-color: #dea27a;
         border-radius: 30px;
@@ -44,68 +52,72 @@
         justify-content: center;
         align-items: center;
     }
-    .user-div i{
+
+    .user-div i {
         color: #fff;
         font-size: 17px;
         margin-top: 9px;
     }
 }
+
 // mobile screen size css
 /* Header Css */
-.mob-nav{
+.mob-nav {
     #main-content {
         position: relative;
     }
-    
+
     #title {
         width: 10%;
         left: 0px;
         position: absolute;
         top: 10px;
     }
-    
+
     .title-img {
         width: 100%;
         height: 100%;
     }
-    
+
     .title-img img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-    
+
     #title img {
         width: 70%;
     }
-    
+
     #btn {
         position: fixed;
         z-index: 5;
         top: 0px;
-        right:0px;
+        right: 0px;
         width: 60px;
         height: 60px;
         cursor: pointer;
         border-radius: 60px;
-        transition: left 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91), 
-        background-color 0.3s ease, border-radius 0.3s ease;
+        transition: left 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91),
+            background-color 0.3s ease, border-radius 0.3s ease;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-    
+
     }
+
     #cancel-icon {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-      }
+    }
+
     #btn:hover {
         border-radius: 50px;
     }
-    
+
     #btn div {
         width: 40px;
         height: 6px;
@@ -119,40 +131,42 @@
         -webkit-transition: -webkit-transform 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91), opacity 500ms, box-shadow 250ms, background-color 500ms;
         transition: transform 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91), opacity 500ms, box-shadow 250ms, background-color 500ms;
     }
-    
+
     #btn.active {
         right: 0px;
         border-bottom: 1px solid transparent;
     }
-    
+
     #btn.active div {
         background-color: transparent;
     }
-    #cancel-icon{
+
+    #cancel-icon {
         font-size: 3rem;
     }
+
     #btn.active:hover>div {
         box-shadow: 0 0 1px #343838;
     }
-    
+
     #btn.active #top {
         -webkit-transform: translateY(10px) rotate(-135deg);
         -ms-transform: translateY(10px) rotate(-135deg);
         transform: translateY(10px) rotate(-135deg);
     }
-    
+
     #btn.active #middle {
         -webkit-transform: scale(0);
         -ms-transform: scale(0);
         transform: scale(0);
     }
-    
+
     #btn.active #bottom {
         -webkit-transform: translateY(-10px) rotate(-45deg);
         -ms-transform: translateY(-10px) rotate(-45deg);
         transform: translateY(-10px) rotate(-45deg);
     }
-    
+
     #box {
         position: fixed;
         z-index: 4;
@@ -169,12 +183,13 @@
         transition: 800ms cubic-bezier(0.645, 0.045, 0.355, 1);
         overflow: hidden;
     }
+
     #box.active {
         right: 0px;
         opacity: 1;
         border-bottom: #FFF;
     }
-    
+
     #items {
         position: relative;
         height: 100%;
@@ -184,7 +199,7 @@
         flex-direction: column;
         overflow-x: hidden;
     }
-    
+
     #items a {
         text-decoration: none;
         color: #000;
@@ -192,7 +207,7 @@
         font-family: 'Aonthrax';
         font-size: 20px;
     }
-    
+
     #items .item1 {
         position: relative;
         cursor: pointer;
@@ -201,26 +216,26 @@
         -webkit-transition: all 250ms;
         transition: all 250ms;
     }
-    
+
     .imglogo {
         width: 100px;
         margin: 50px auto 0 auto;
     }
-    
+
     .imglogo img {
         width: 100%;
         object-fit: cover;
     }
-    
+
     .item1 {
         margin: 0px !important;
         padding: 25px 30px !important;
         /* font-size: 20px !important; */
         font-size: 40px !important;
         text-align: center;
-    
+
     }
-    
+
     .item1 {
         height: auto;
         font-size: 60px;
@@ -228,7 +243,7 @@
         color: #000;
         opacity: 0.8;
     }
-    
+
     .item1:after {
         display: block;
         content: '';
@@ -236,60 +251,71 @@
         transform: scaleX(0);
         transition: transform 300ms ease-in-out;
     }
-    
+
     .item1:hover:after {
         transform: scaleX(1);
     }
-    
+
     .item1.fromright:after {
         transform-origin: 0 50%;
     }
-    
+
     #items .item:hover {
         padding: 15px 45px;
         background-color: rgba(52, 56, 56, 0.2);
     }
-    
 }
-
+.header-login.headerNotShow {
+    display: none;
+}
+.main-header.headerShow {
+    display: none;
+}
 // mobile screen size css
 
 
 
 // =====================Media Query ====================== //
-@media only screen and (min-width:1366px){
-    .mob-nav{
+@media only screen and (min-width:1366px) {
+    .mob-nav {
         display: none;
     }
 
 }
-@media only screen and (min-width:1440px){
-    .mob-nav{
+
+@media only screen and (min-width:1440px) {
+    .mob-nav {
         display: none;
     }
 
 }
-@media only screen and (max-width:820px){
-    .desktop-nav{
+
+@media only screen and (max-width:820px) {
+    .desktop-nav {
         display: none !important;
     }
-    .mob-nav{
+
+    .mob-nav {
         display: block !important;
     }
 }
-@media only screen and (max-width:768px){
-    .desktop-nav{
+
+@media only screen and (max-width:768px) {
+    .desktop-nav {
         display: none !important;
     }
-    .mob-nav{
+
+    .mob-nav {
         display: block !important;
     }
 }
-@media only screen and (max-width:414px){
-    .desktop-nav{
+
+@media only screen and (max-width:414px) {
+    .desktop-nav {
         display: none !important;
     }
-    .mob-nav{
+
+    .mob-nav {
         display: block !important;
     }
 }

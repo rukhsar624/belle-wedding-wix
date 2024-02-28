@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-
+  public registerForm:FormGroup
+constructor(private fb:FormBuilder){
+  this.registerForm=this.fb.group({
+    
+  })
+}
 }

@@ -1,20 +1,22 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { AuthRoutingModule } from './auth-routing.module';
-import { AuthComponent } from './auth.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from '../layout/layout.module';
 import { AboutComponent } from './about/about.component';
+import { AuthRoutingModule } from './auth-routing.module';
+import { AuthComponent } from './auth.component';
+import { ContactComponent } from './contact/contact.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { GetStartedComponent } from './get-started/get-started.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ServicesComponent } from './services/services.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { ContactComponent } from './contact/contact.component';
-import { RegisterComponent } from './register/register.component';
-import { ForgetPasswordComponent } from './forget-password/forget-password.component';
-import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { GetStartedComponent } from './get-started/get-started.component';
 
 
 @NgModule({
@@ -30,12 +32,16 @@ import { GetStartedComponent } from './get-started/get-started.component';
     RegisterComponent,
     ForgetPasswordComponent,
     ResetPasswordComponent,
-    GetStartedComponent
+    GetStartedComponent,
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
     LayoutModule,
+    HttpClientModule,
+    FormsModule, 
+    ReactiveFormsModule,
+    HttpClientModule,
   ]
 })
 export class AuthModule { }
