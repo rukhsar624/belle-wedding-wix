@@ -29,13 +29,15 @@
                 outline: none;
                 border: none;
                 background-color: transparent !important;
-                border: 1px solid #FFF;
-                color: #fff;
+                border: 1px solid #000;
+                color:#000;
+                font-weight: bolder;
                 padding: 10px;
                 border-radius: 10px;
-                font-size: 20px;
+                font-size: 15px;
                 font-weight: bold;
-                font-family: 'LovelineGlamour';
+                // font-family: 'LovelineGlamour';
+                font-family: 'Poppins-Light';
             }
         }
         
@@ -51,7 +53,39 @@
             font-weight: bold;
             color: #FFF;
             font-family: 'LovelineGlamour';
+            cursor: pointer;
         }
     }
     
 }
+.show-eye{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+.show-hide {
+    position: absolute;
+    top: -25px;
+    right: 0px;
+  
+    i{
+        color: #000;
+        font-size: 15px;
+    }
+  }
+  .needs-validation {
+    .invalid-feedback {
+      font-size: 80%;
+    }
+  
+    .show-hide {
+      right: 30px;
+      color: #fff;
+    }
+  
+    .invalid-tooltip {
+      top: 10px;
+      right: 10px;
+      left: unset;
+    }
+  }

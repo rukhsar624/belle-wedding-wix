@@ -12,6 +12,8 @@ import { RegisterComponent } from './register/register.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { GetStartedComponent } from './get-started/get-started.component';
+import { AuthGuardGuard } from '../services/auth-guard.guard';
+import { InnerGuardGuard } from '../services/inner-guard.guard';
 
 const routes: Routes = [
   {
@@ -30,6 +32,7 @@ const routes: Routes = [
       {
         path: 'home',
         component:HomeComponent,
+        canActivate: [InnerGuardGuard]
       },
       {
         path: 'about',
@@ -54,6 +57,7 @@ const routes: Routes = [
       {
         path: 'register',
         component:RegisterComponent,
+        canActivate:[AuthGuardGuard]
       },
       {
         path: 'forget',

@@ -12,7 +12,7 @@ export class FooterComponent {
 constructor(private router:Router){
   router.events.subscribe((val: any) => {
     const routeName = router.routerState.snapshot.url.split("/")[2];
-    console.log(routeName);
+    // console.log(routeName);
     this.showFooter = !(routeName === 'home' || routeName === 'contact' || routeName === 'faqs');
   });
 }

@@ -35,25 +35,46 @@
                 <div class="gallery-inner-div">
                     <div class="gallery-img-div">
                         <div class="img">
-                            <form action="">
+                            <form action="" [formGroup]="contactForm">
                                 <div class="container d-flex justify-content-center mt-5"
                                     style="padding-left: 4rem;padding-right: 4rem;">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <input type="text" id="fname" name="Name" placeholder="Name"><br>
+                                            <input type="text" id="fname" name="Name" class="form-control" placeholder="Name"
+                                            formControlName="name">
+                                            <div *ngIf="contactForm.controls['name'].touched && contactForm.controls['name'].errors?.['required']"
+                                            class="text-danger">
+                                            First Name is Required
+                                            </div>
+                                            <br>
                                         </div>
                                         <div class="col-lg-6">
-                                            <input type="email" id="lname" name="email" placeholder="Email"><br><br>
+                                            <input type="email" id="lname" name="email" class="form-control" placeholder="Email"
+                                            formControlName="email">
+                                            <div *ngIf="contactForm.controls['email'].touched && contactForm.controls['email'].errors?.['required']"
+                                            class="text-danger">
+                                            Email is Required
+                                            </div><br><br>
                                         </div>
                                         <div class="col-lg-12">
-                                            <input type="email" id="lname" name="email" placeholder="Email"><br><br>
+                                            <input type="text" id="lname" name="subject" placeholder="Subject"
+                                            formControlName="subject">
+                                            <div *ngIf="contactForm.controls['subject'].touched && contactForm.controls['subject'].errors?.['required']"
+                                            class="text-danger">
+                                            Subject is Required
+                                            </div>
+                                            <br><br>
                                         </div>
                                         <div class="col-lg-12">
                                             <textarea rows="4" cols="50" name="comment"
-                                                form="usrform">Message</textarea>
+                                                form="usrform" formControlName="message" placeholder="Message">Message</textarea>
+                                                <div *ngIf="contactForm.controls['message'].touched && contactForm.controls['message'].errors?.['required']"
+                                            class="text-danger">
+                                            Message is Required
+                                            </div>
                                         </div>
                                         <div class="text-center">
-                                            <button>submit</button>
+                                            <button (click)="userQuery()">submit</button>
                                         </div>
                                     </div>
                                 </div>

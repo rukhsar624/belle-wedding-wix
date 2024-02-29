@@ -38,4 +38,32 @@ export class LoginComponent {
       }
     )
   }
+//   loginUser() {
+//   fetch('/auth/login', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(this.Loginform.value),
+//   })
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! Status: ${response.status}`);
+//     }
+//     return response.json();
+//   })
+//   .then(data => {
+//     console.log(data, "login response");
+//     localStorage.setItem('access_token', data?.token);
+//     this.router.navigate(['/auth/home']);
+//   })
+//   .catch(error => {
+//     console.error('Error during login:', error);
+//     // Handle specific error cases
+//     if (error.status === 403) {
+//       localStorage.setItem('email', this.Loginform.controls['email'].value);
+//     }
+//   });
+// }
+
 }

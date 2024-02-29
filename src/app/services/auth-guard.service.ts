@@ -5,14 +5,20 @@ import { of } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthGuardService {
-isLogin=false
+isLogin=false;
+roleAs: any;
   constructor() { }
   login(value:string){
-    this.isLogin = true;
-    localStorage.setItem('loginstate', 'true');
-    return of({ success: this.isLogin, role: value });
+    this.isLogin=true;
+    this.roleAs = value;
+    localStorage.setItem('loginstate', 'true'); 
+    return of ({success:this.isLogin,value})
   }
   isLoggedIn() {
-    return localStorage.getItem('access_token')
+    return localStorage.getItem('token')
+  }
+
+  getRole() {
+    return localStorage.getItem('role');
   }
 }

@@ -17,7 +17,7 @@ export class HttpService {
     }),
   };
   get headerToken() {
-    const token = localStorage.getItem('access_token');
+    const token = localStorage.getItem('token');
     return {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',

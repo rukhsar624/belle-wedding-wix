@@ -19,6 +19,5 @@
     src: url("./assets/fonts/Didot\ eText\ W01\ Italic.ttf");
 }
 ::placeholder {
-    color: #000;
-    opacity: 1; /* Firefox */
+    color: #000 !important;
   }

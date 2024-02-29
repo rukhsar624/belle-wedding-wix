@@ -42,6 +42,9 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     FormsModule, 
     ReactiveFormsModule,
     HttpClientModule,
+    
+  ],
+  providers:[
   ]
 })
 export class AuthModule { }

@@ -15,13 +15,13 @@ export class HeaderComponent {
   constructor(private cd: ChangeDetectorRef,private router:Router){
     router.events.subscribe((val: any) => {
       const routeName = router.routerState.snapshot.url.split("/")[2];
-      console.log(routeName);
+      // console.log(routeName);
       this.headerNotShow = (routeName === 'login' || routeName === 'register' || routeName ==='forget'
       || routeName === 'reset');
     });
     router.events.subscribe((val: any) => {
       const routeName = router.routerState.snapshot.url.split("/")[2];
-      console.log(routeName);
+      // console.log(routeName);
       this.headerShow = (routeName === 'home' || routeName === 'about' || routeName === 'services' || routeName === 'testimonials'
       || routeName === 'gallery' || routeName === 'contact');
     });
