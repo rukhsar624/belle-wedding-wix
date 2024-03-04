@@ -12,11 +12,12 @@ export class AuthGuardGuard implements CanActivate {
   canActivate():boolean{
     if(localStorage.getItem('loginstate')){
       const role = localStorage.getItem('role');
-      if (role === 'contractor') {
-        this.router.navigate(['contractors']);
-      } else if (role === 'user') {
+      if (role === 'users') {
         this.router.navigate(['users']);
-      }
+      } 
+      // else if (role === 'user') {
+      //   this.router.navigate(['users']);
+      // }
       return false;
     }
     return true;

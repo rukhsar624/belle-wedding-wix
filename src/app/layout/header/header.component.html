@@ -33,7 +33,7 @@
                             <div class="user-div">
                                 <i class="fa-solid fa-user"></i>
                             </div>
-                            <div>Log Out</div>
+                            <div><button (click)="uersLogOut()" class="button">Log Out</button></div>
                         </div>
                     </a>
                 </div>
@@ -67,7 +67,7 @@
                         <div class="item1"><a routerLink="./testimonials" routerLinkActive="active" ariaCurrentWhenActive="page" class="header_links">Testimonials</a></div>
                         <div class="item1"><a routerLink="./gallery" routerLinkActive="active" ariaCurrentWhenActive="page" class="header_links">Gallery</a></div>
                         <div class="item1"><a routerLink="./contact" routerLinkActive="active" ariaCurrentWhenActive="page" class="header_links">Contact US</a></div>
-                        <div class="item1"><a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page" class="header_links">Login out</a></div>
+                        <div class="item1"><a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page" class="header_links" (click)="uersLogOut()">Log out</a></div>
                     </div>
                 </div>
             </div>
@@ -124,7 +124,7 @@
                 </div>
                 <div id="box" class="" [ngClass]="{ 'active': isMobileNavActive }">
                     <div id="items">
-                        <div class="item1"><a routerLink="./login" routerLinkActive="active" ariaCurrentWhenActive="page" class="header_links">Login In</a></div>
+                        <div class="item1"><a routerLink="./login" routerLinkActive="active" ariaCurrentWhenActive="page" class="header_links">Log In</a></div>
                     </div>
                 </div>
             </div>

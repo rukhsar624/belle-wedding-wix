@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators,  } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  selector: 'app-contact-us',
+  templateUrl: './contact-us.component.html',
+  styleUrls: ['./contact-us.component.scss']
 })
-export class ContactComponent {
-
+export class ContactUsComponent {
   public contactForm:FormGroup;
   constructor(private fb:FormBuilder ,private http: HttpService, private router:Router,){
   this.contactForm=this.fb.group({

@@ -4,7 +4,7 @@
             <div class="col-lg-12">
                 <div class="center-div">
                     <h1>Register</h1>
-                    <form action="" class="" [formGroup]="registerForm">
+                    <form action="" class="" [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">
                         <div class="row">
                             <div class="col-lg-8 mx-auto">
                                 <div class="row">
@@ -57,9 +57,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- <div class="mt-3 input text-center"><button (click)="uersResgister()" [disabled]="!isFormValid">Register</button></div> -->
-                                    <div class="mt-3 input text-center"><button (click)="uersResgister()">Register</button></div>
-
+                                    <div class="mt-3 input text-center"><button (click)="createUserAccount()" disabled="isFormValid">Register</button></div>
                                 </div>
                             </div>
                         </div>
@@ -69,3 +67,25 @@
         </div>
     </div>
 </section>
+<button class="d-none" #modalOpen (click)="open(content)"></button>
+<!-- modal -->
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form [formGroup]="otpForm">
+			<div class="mb-3">
+				<label for="dateOfBirth">OTP Verification</label>
+				<div class="input-group">
+					<ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:4}"></ng-otp-input>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-lite" (click)="singUp()">Verify</button>
+            <button type="button" class="btn btn-outline-lite" (click)="resendOtp()">Resend Otp</button>
+	</div>
+</ng-template>

@@ -52,7 +52,12 @@
         justify-content: center;
         align-items: center;
     }
-
+    .button{
+        outline: none;
+        border: none;
+        background-color: transparent;
+        color: #000;
+    }
     .user-div i {
         color: #fff;
         font-size: 17px;
@@ -200,7 +205,7 @@
         overflow-x: hidden;
     }
 
-    #items a {
+    #items a{
         text-decoration: none;
         color: #000;
         font-weight: lighter;

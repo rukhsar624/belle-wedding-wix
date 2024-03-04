@@ -29,4 +29,9 @@ export class HeaderComponent {
   toggleMobileNav(){
     this.isMobileNavActive = !this.isMobileNavActive;
   }
+  uersLogOut(){
+    localStorage.clear();
+    console.log('users logout');
+    this.router.navigate(['/auth/login'])
+  }
 }
