@@ -60,18 +60,35 @@ export class ForgetPasswordComponent {
   verifyOtp() {
     const email = this.forgetPassword.controls['email'].value;
     const otp = this.forgetPassword.controls['otp'].value;
-    
-    this.http.post('/verify-otp', { email: email, otp: otp }, false).subscribe((res: any) => {
-      if (res.message === 'OTP matched') {
-        this.modalService.dismissAll();
-        localStorage.setItem('email',email)
-        localStorage.setItem('otp',otp)
-        this.router.navigate(['auth/reset']);
-        console.log("otp message");
-        
-      } else {
+    this.http.post('/verify-otp', { email: email, otp: otp }, false).subscribe(
+      (res: any) => {
+        if (res.message === 'OTP matched') {
+          this.modalService.dismissAll();
+          localStorage.setItem('email', email);
+          localStorage.setItem('otp', otp);
+          this.router.navigate(['auth/reset']);
+          console.log("otp message");
+        } else {
+          // Handle other cases when the OTP doesn't match
+        }
+      },
+      (error) => {
+        console.error("Error in verifyOtp():", error);
+        // Handle the error, log it, or display an error message
       }
-    });
+    );
+    
+    // this.http.post('/verify-otp', { email: email, otp: otp }, false).subscribe((res: any) => {
+    //   if (res.message === 'OTP matched') {
+    //     this.modalService.dismissAll();
+    //     localStorage.setItem('email',email)
+    //     localStorage.setItem('otp',otp)
+    //     this.router.navigate(['auth/reset']);
+    //     console.log("otp message");
+        
+    //   } else {
+    //   }
+    // });
   }
   
 
