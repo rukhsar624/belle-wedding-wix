@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-forget-password',
@@ -8,29 +11,80 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./forget-password.component.scss']
 })
 export class ForgetPasswordComponent {
-  public reSetPwd:FormGroup
-  isFormValid :boolean =false
-constructor(private fb:FormBuilder , private toaster:ToastrService){
-  this.reSetPwd=this.fb.group({
-    email:['' ,Validators.required],
-    password:['',Validators.required],
-    password_confirmation:['',Validators.required]
-  }) 
-}
-reset(){
-  if(this.isFormValid){
-    const password=this.reSetPwd.controls['password'];
-    const password_confirmation=this.reSetPwd.controls['password_confirmation'];
-    const email =this.reSetPwd.controls['email'].value;
-if(password!==password_confirmation){
-  this.toaster.error('Passwords do not match', 'Error');
-        return;
-  
-}
+
+  public forgetPassword: FormGroup
+  isFormValid: boolean = false
+  closeResult = '';
+  @ViewChild('modalOpen') modalOpen!: ElementRef;
+  constructor(private fb: FormBuilder, private toaster: ToastrService, private http: HttpService,private modalService: NgbModal,
+    private router: Router) {
+    this.forgetPassword = this.fb.group({
+      email: ['', [Validators.required , Validators.email]],
+    })
+  }
+  open(content: any) {
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title' , centered: true })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+  sendOtp() {
+    const email = this.forgetPassword.controls['email'].value;
+    this.http.post('/send-otp', { email: email, page: 'forget' }, false).subscribe((res: any) => {
+      this.modalOpen.nativeElement.click();
+    });
+  }
+
+  resendOtp() {
+    const email = this.forgetPassword.controls['email'].value;
+    this.http.post('/send-otp', { email: email, role: localStorage.getItem('role'), page: 'forget' }, false).subscribe((res: any) => {
+    });
+  }
+
+  verifyOtp() {
+    const email = this.forgetPassword.controls['email'].value;
+    const otp = this.forgetPassword.controls['otp'].value;
+    
+    this.http.post('/verify-otp', { email: email, otp: otp }, false).subscribe((res: any) => {
+      if (res.message === 'OTP matched') {
+        this.modalService.dismissAll();
+        localStorage.setItem('email',email)
+        localStorage.setItem('otp',otp)
+        this.router.navigate(['auth/reset']);
+        console.log("otp message");
+        
+      } else {
+      }
+    });
   }
   
 
+  onOtpChange(event: any) {
+    console.log(event);
+    if (event.length === 4) {
+      this.forgetPassword.addControl('otp', new FormControl(event, [Validators.required]));
+    } else {
+      this.forgetPassword.removeControl('otp');
+    }
   }
+  reset() {
 
-
+  }
+  
 }

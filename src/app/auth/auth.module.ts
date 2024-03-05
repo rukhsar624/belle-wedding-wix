@@ -10,6 +10,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NgOtpInputModule } from 'ng-otp-input';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { NgOtpInputModule } from 'ng-otp-input';
     LoginComponent,
     RegisterComponent,
     ForgetPasswordComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     CommonModule,
