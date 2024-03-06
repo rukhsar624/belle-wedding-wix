@@ -46,7 +46,7 @@ export class ForgetPasswordComponent {
   }
   sendOtp() {
     const email = this.forgetPassword.controls['email'].value;
-    this.http.post('/send-otp', { email: email, page: 'forget' }, false).subscribe((res: any) => {
+    this.http.post('/send-otp', { email: email, role:localStorage.getItem('role'), page: 'forget' }, false).subscribe((res: any) => {
       this.modalOpen.nativeElement.click();
     });
   }
@@ -61,37 +61,33 @@ export class ForgetPasswordComponent {
     const email = this.forgetPassword.controls['email'].value;
     const otp = this.forgetPassword.controls['otp'].value;
     this.http.post('/verify-otp', { email: email, otp: otp }, false).subscribe(
+      // (res: any) => {
+      //   if (res.message === 'Otp verified') {
+      //     this.modalService.dismissAll();
+      //     localStorage.setItem('email', email);
+      //     localStorage.setItem('otp', otp);
+      //     this.router.navigate(['auth/reset']);
+      //   } else {
+      //   }
+      // },
       (res: any) => {
-        if (res.message === 'OTP matched') {
-          this.modalService.dismissAll();
-          localStorage.setItem('email', email);
-          localStorage.setItem('otp', otp);
-          this.router.navigate(['auth/reset']);
-          console.log("otp message");
-        } else {
-          // Handle other cases when the OTP doesn't match
+        try {
+          if (res.message === 'Otp verified') {
+            this.modalService.dismissAll();
+            localStorage.setItem('email', email);
+            localStorage.setItem('otp', otp);
+            // this.router.navigate(['reset']);
+            this.router.navigateByUrl('auth/reset');
+          } else {
+            // Handle other cases if needed
+          }
+        } catch (error) {
+          console.error('Error in modal close logic:', error);
         }
-      },
-      (error) => {
-        console.error("Error in verifyOtp():", error);
-        // Handle the error, log it, or display an error message
       }
+      
     );
-    
-    // this.http.post('/verify-otp', { email: email, otp: otp }, false).subscribe((res: any) => {
-    //   if (res.message === 'OTP matched') {
-    //     this.modalService.dismissAll();
-    //     localStorage.setItem('email',email)
-    //     localStorage.setItem('otp',otp)
-    //     this.router.navigate(['auth/reset']);
-    //     console.log("otp message");
-        
-    //   } else {
-    //   }
-    // });
   }
-  
-
   onOtpChange(event: any) {
     console.log(event);
     if (event.length === 4) {
