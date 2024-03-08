@@ -10,7 +10,9 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./reset-password.component.scss']
 })
 export class ResetPasswordComponent {
-  public reset:FormGroup
+  public reset:FormGroup;
+  public show: boolean = false;
+  public showConfirm:boolean= false;
   constructor(private fb: FormBuilder, private toaster: ToastrService , private http:HttpService ,private router: Router) {
     this.reset = this.fb.group({
       email: ['', Validators.required],
@@ -20,15 +22,11 @@ export class ResetPasswordComponent {
   }
   resetPasswordFunction() {
     const newPassword = this.reset.controls['password'].value;
-// console.log(localStorage.getItem('otp'));
-
+    const confirmation_password =this.reset.controls['password_confirmation'].value;
     this.http
-      .post(
-        'forget-password',
-        {
-          email: localStorage.getItem('email'),
-          otp:localStorage.getItem('otp'),
-          password: newPassword,
+      .post('/forget-password',{email: localStorage.getItem('email'),otp:localStorage.getItem('otp'),
+      password: newPassword,
+      password_confirmation:confirmation_password
         },
         true
       )
@@ -43,5 +41,12 @@ export class ResetPasswordComponent {
           console.error('Password reset failed', error);
         }
       );
+    
+  }
+  showPassword() {
+    this.show = !this.show;
+  }
+  showConfirmPassword() {
+    this.showConfirm = !this.showConfirm;
   }
 }

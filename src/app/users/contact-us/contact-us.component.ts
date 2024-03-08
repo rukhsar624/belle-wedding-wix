@@ -23,6 +23,8 @@ export class ContactUsComponent {
     this.http.post('/contact_us' , this.contactForm.value, true).subscribe((res:any)=>{
       console.log(this.contactForm,'data');
       
+    }),((err: any) => {
+      console.log(err);
     })
   }
 }

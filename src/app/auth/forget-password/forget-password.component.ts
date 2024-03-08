@@ -60,33 +60,36 @@ export class ForgetPasswordComponent {
   verifyOtp() {
     const email = this.forgetPassword.controls['email'].value;
     const otp = this.forgetPassword.controls['otp'].value;
+    // this.http.post('/verify-otp', { email: email, otp: otp }, false).subscribe(
+    //   (res: any) => {
+    //     if (res.message === 'Otp verified') {
+    //       this.modalService.dismissAll();
+    //       this.router.navigate(['/auth/reset']);
+    //       localStorage.setItem('email', email);
+    //       localStorage.setItem('otp', otp);
+    //     } else {
+    //     }
+    //   },
+    // );
     this.http.post('/verify-otp', { email: email, otp: otp }, false).subscribe(
-      // (res: any) => {
-      //   if (res.message === 'Otp verified') {
-      //     this.modalService.dismissAll();
-      //     localStorage.setItem('email', email);
-      //     localStorage.setItem('otp', otp);
-      //     this.router.navigate(['auth/reset']);
-      //   } else {
-      //   }
-      // },
       (res: any) => {
-        try {
-          if (res.message === 'Otp verified') {
-            this.modalService.dismissAll();
-            localStorage.setItem('email', email);
-            localStorage.setItem('otp', otp);
-            // this.router.navigate(['reset']);
-            this.router.navigateByUrl('auth/reset');
-          } else {
-            // Handle other cases if needed
-          }
-        } catch (error) {
-          console.error('Error in modal close logic:', error);
+        console.log('API Response:', res);
+    
+        if (res.message === 'Otp verified.') {
+          console.log('Otp verified. Navigating to /auth/reset...');
+          this.modalService.dismissAll();
+          this.router.navigate(['/auth/reset']);
+          localStorage.setItem('email', email);
+          localStorage.setItem('otp', otp);
+        } else {
+          console.log('Otp not verified.');
         }
+      },
+      (error) => {
+        console.error('Error in API request:', error);
       }
-      
     );
+    
   }
   onOtpChange(event: any) {
     console.log(event);
