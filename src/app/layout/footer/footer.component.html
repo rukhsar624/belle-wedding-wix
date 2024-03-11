@@ -2,16 +2,20 @@
     <div class="middle">
         <div class="row">
         <div class="col-lg-3 col-xm-6 col-md-3 line-footer">
-            <p>500 Terry Francine Street </p>
-            <p>San Francisco, CA 94158</p>
+            <!-- <p>500 Terry Francine Street </p>
+            <p>San Francisco, CA 94158</p> -->
+            <p><a href="" style="text-decoration: none;color:#000;">{{cms?.address}}</a></p>
         </div>
         <div class="col-lg-3 col-xm-6 col-md-3 line-footer">
-            <p>Tel: 123-456-7890</p>
-            <p>Email: info@mysite.com</p>
+            <!-- <p>Tel: 123-456-7890</p> -->
+            <!-- <p>Email: info@mysite.com</p> -->
+            <p><a href="" style="text-decoration: none;color:#000;">Tell {{cms?.number}}</a></p>
+            <p>{{cms?.email}}</p>
         </div>
         <div class="col-lg-3 col-xm-6 col-md-3 line-footer">
-            <p>© 2035 by Belle Weddings. </p>
-            <p>Powered and secured by Wix</p>
+            <!-- <p>© 2035 by Belle Weddings. </p> -->
+            <!-- <p>Powered and secured by Wix</p> -->
+            <p>{{cms?.copyright}}</p>
         </div>
         <div class="col-lg-3 col-xm-6 col-md-3 line-footer">
             <button>

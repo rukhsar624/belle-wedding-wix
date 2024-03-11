@@ -31,10 +31,13 @@
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/evo-calendar/evo-calendar/css/evo-calendar.css",
+              "node_modules/evo-calendar/evo-calendar/css/evo-calendar.orange-coral.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/evo-calendar/evo-calendar/js/evo-calendar.min.js"
             ]
           },
           "configurations": {
@@ -97,9 +100,13 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/evo-calendar/evo-calendar/css/evo-calendar.css",
+              "node_modules/evo-calendar/evo-calendar/css/evo-calendar.orange-coral.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/evo-calendar/evo-calendar/js/evo-calendar.min.js"
+            ]
           }
         }
       }
