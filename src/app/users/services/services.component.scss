@@ -48,7 +48,7 @@
         font-family: "Poppins-Light";
     }
 
-    h6 {
+    h6{
         font-family: "Poppins-Light";
         font-size: 17px;
     }
@@ -61,6 +61,27 @@
             font-family: "Poppins-Light";
             font-size: 17px;
         }
+    }
+}
+.calendar-main-div{
+    h5{
+        font-family: "Poppins-Light";
+        font-size: 17px; 
+    }
+    th{
+        font-family: "Poppins-Light";
+        font-size: 17px; 
+        font-weight: lighter;
+    }
+    .generate-date{
+        background-color: #dea27a;
+        padding: 10px;
+        border: none;
+        outline: none;
+        padding: 0.6rem 2.5rem;
+        color:#000;
+        font-family: "Poppins-Light";
+        border-radius: 0px !important;
     }
 }
 @media only screen and (max-width:375px) {

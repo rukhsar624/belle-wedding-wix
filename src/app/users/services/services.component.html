@@ -8,49 +8,84 @@
             </div>
         </div>
         <div class="inner-div-two">
-                <hr>
-                <div class="d-flex align-items-center mb-5">
-                    <div style="width: 33.33%;"><h6>Wedding Coordinator</h6></div>
-                    <div style="width: 33.33%;" class="d-flex justify-content-center"><span>1hr <h6>$150</h6></span></div>
-                    <div style="width: 33.33%;" class="d-flex justify-content-end"><button>Book Now</button></div>
+            <hr>
+            <div class="d-flex align-items-center mb-5">
+                <div style="width: 33.33%;">
+                    <h6>Wedding Coordinator</h6>
                 </div>
-                <hr>
-                <div class="d-flex align-items-center mb-5">
-                    <div style="width: 33.33%;"><h6>Destination Wedding</h6></div>
-                    <div style="width: 33.33%;" class="d-flex justify-content-center"><span>1hr <h6>$150</h6></span></div>
-                    <div style="width: 33.33%;" class="d-flex justify-content-end"><button>Book Now</button></div>
+                <div style="width: 33.33%;" class="d-flex justify-content-center"><span>1hr <h6>$150</h6></span></div>
+                <div style="width: 33.33%;" class="d-flex justify-content-end"><button>Book Now</button></div>
+            </div>
+            <hr>
+            <div class="d-flex align-items-center mb-5">
+                <div style="width: 33.33%;">
+                    <h6>Destination Wedding</h6>
                 </div>
-                <hr>
-                <div class="d-flex align-items-center mb-5">
-                    <div style="width: 33.33%;"><h6>Full Package</h6></div>
-                    <div style="width: 33.33%;" class="d-flex justify-content-center"><span>1hr <h6>$150</h6></span></div>
-                    <div style="width: 33.33%;" class="d-flex justify-content-end"><button>Book Now</button></div>
+                <div style="width: 33.33%;" class="d-flex justify-content-center"><span>1hr <h6>$150</h6></span></div>
+                <div style="width: 33.33%;" class="d-flex justify-content-end"><button>Book Now</button></div>
+            </div>
+            <hr>
+            <div class="d-flex align-items-center mb-5">
+                <div style="width: 33.33%;">
+                    <h6>Full Package</h6>
                 </div>
-                <hr>
-                <div class="d-flex align-items-center mb-5">
-                    <div style="width: 33.33%;"><h6>Partial Package</h6></div>
-                    <div style="width: 33.33%;" class="d-flex justify-content-center"><span>1hr <h6>$150</h6></span></div>
-                    <div style="width: 33.33%;" class="d-flex justify-content-end"><button>Book Now</button></div>
+                <div style="width: 33.33%;" class="d-flex justify-content-center"><span>1hr <h6>$150</h6></span></div>
+                <div style="width: 33.33%;" class="d-flex justify-content-end"><button>Book Now</button></div>
+            </div>
+            <hr>
+            <div class="d-flex align-items-center mb-5">
+                <div style="width: 33.33%;">
+                    <h6>Partial Package</h6>
                 </div>
+                <div style="width: 33.33%;" class="d-flex justify-content-center"><span>1hr <h6>$150</h6></span></div>
+                <div style="width: 33.33%;" class="d-flex justify-content-end"><button>Book Now</button></div>
+            </div>
         </div>
     </div>
     <div>
         <div class="container calendar-main-div pb-5">
             <div class="row pb-5">
                 <div class="col-lg-12 pt-5">
-                    <div id="calendar"></div>
-                    <!-- <mat-form-field>
-                        <mat-label>Enter a date range</mat-label>
-                        <mat-date-range-input [rangePicker]="picker">
-                          <input matStartDate placeholder="Start date">
-                          <input matEndDate placeholder="End date">
-                        </mat-date-range-input>
-                        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-date-range-picker #picker></mat-date-range-picker>
-                      </mat-form-field> -->
+                    <!-- <div id="calendar"></div> -->
+                    <div class="card">
+                        <div class="card-header calender-btn">
+                            <h5>
+                                Wedding Dates
+                                <div class="clearfix"></div>
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Booking Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody [formGroup]="formDate">
+                                        <tr>
+                                            <td>
+                                                <input class="form-control" type="date" formControlName="starting_date"
+                                                    placeholder="Start Date" />
+                                            </td>
+                                            <td>
+                                                <input class="form-control" type="date" formControlName="ending_date"
+                                                    placeholder="End Date" />
+                                            </td>
+                                            <td>
+                                                <button class="btn generate-date mx-auto" (click)="submitDates()">
+                                                    Booking Date
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </div>
     </div>
