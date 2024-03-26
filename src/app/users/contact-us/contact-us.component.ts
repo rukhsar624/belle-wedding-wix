@@ -18,13 +18,13 @@ export class ContactUsComponent {
     email:['',[Validators.required]],
     subject:['',[Validators.required]],
     message:['',[Validators.required]],
-  })  
-  
+  })
+
   }
   userQuery(){
     this.http.post('/contact_us' , this.contactForm.value, true).subscribe((res:any)=>{
       console.log(this.contactForm,'data');
-      
+
     }),((err: any) => {
       console.log(err);
     })
