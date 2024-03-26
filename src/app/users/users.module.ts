@@ -11,6 +11,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { LayoutModule } from '../layout/layout.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HighlightDirective } from './highlight.directive';
 @NgModule({
   declarations: [
     UsersComponent,
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ServicesComponent,
     TestimonialsComponent,
     GalleryComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    HighlightDirective
   ],
   imports: [
     CommonModule,

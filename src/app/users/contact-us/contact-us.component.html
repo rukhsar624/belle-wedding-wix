@@ -101,3 +101,16 @@
         </div>
     </div>
 </div>
+<!-- two way Binding -->
+<input type="text" [(ngModel)]="name">
+{{name}}
+<!-- one way Binding -->
+{{name1}}
+<input type="text" name="" id="" [value]="name1">
+<h2>Color Change</h2>
+<p appHighlight="color">Highlight me!</p>
+<input type="radio" name="color" (click)="clickGreen()">Green
+<input type="radio" name="color" (click)="clickPink()">Green
+<input type="radio" name="color" (click)="clickBlue()">Blue
+
+
